@@ -1,7 +1,14 @@
 import { useState } from 'react';
 import { Users } from './users';
+import Table from './Table';
 function App() {
   const [searchValue, setSearchValue] = useState('');
+  const searchAndFilter = (data) => {
+    return data.filter((item) =>
+      item.first_name.toLowerCase().includes(searchValue)
+    );
+  };
+
   return (
     <div className="app">
       <input
@@ -11,15 +18,19 @@ function App() {
         onChange={(e) => setSearchValue(e.target.value)}
         value={searchValue}
       />
-      <ul className="list-items">
+      {/* <ul className="list-items">
         {Users.filter((u) =>
           u.first_name.toLowerCase().includes(searchValue)
         ).map((u) => (
           <li className="item" key={u.id}>
             {u.first_name}
-          </li>
-        ))}
-      </ul>
+            </li>
+            ))}
+          </ul> */}
+
+      {/* different options */}
+
+      <Table data={searchAndFilter(Users)} />
     </div>
   );
 }
