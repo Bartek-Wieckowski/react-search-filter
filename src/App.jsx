@@ -3,9 +3,11 @@ import { Users } from './users';
 import Table from './Table';
 function App() {
   const [searchValue, setSearchValue] = useState('');
+  const keys = ['first_name', 'last_name', 'email'];
+
   const searchAndFilter = (data) => {
     return data.filter((item) =>
-      item.first_name.toLowerCase().includes(searchValue)
+      keys.some((key) => item[key].toLowerCase().includes(searchValue))
     );
   };
 
