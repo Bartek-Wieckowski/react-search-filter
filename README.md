@@ -1,4 +1,4 @@
-![Live demo](https://bartek-wieckowski.github.io/react-search-filter/)
+[Live demo](https://bartek-wieckowski.github.io/react-search-filter/)
 
 # Search filter component with Create React App
 
